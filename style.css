@@ -1,0 +1,304 @@
+/* ==========================================================================
+NANBAN CATERING - COMPLETE STANDALONE STYLESHEET
+Includes CSS Reset, Custom Variables, Utility Classes & Responsive Layouts
+========================================================================== */
+
+:root {
+--brand-orange: #EA580C;
+--brand-amber: #F59E0B;
+--brand-green: #15803D;
+--brand-light-green: #ECFDF5;
+--brand-dark: #1C1917;
+--brand-cream: #FFFBEB;
+
+--font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+--font-display: 'Rozha One', Georgia, serif;
+--font-tamil: 'Noto Sans Tamil', sans-serif;
+}
+
+/* ==========================================================================
+
+BASE RESET & TYPOGRAPHY
+========================================================================== */
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+border-width: 0;
+border-style: solid;
+border-color: #e5e7eb;
+}
+
+html {
+scroll-behavior: smooth;
+line-height: 1.5;
+-webkit-text-size-adjust: 100%;
+font-family: var(--font-sans);
+}
+
+body {
+background-color: rgba(255, 251, 235, 0.3);
+color: #292524;
+font-family: var(--font-sans);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+overflow-x: hidden;
+}
+
+::selection {
+background-color: #f97316;
+color: #ffffff;
+}
+
+a {
+color: inherit;
+text-decoration: inherit;
+}
+
+button, input, select, textarea {
+font-family: inherit;
+font-size: 100%;
+line-height: inherit;
+color: inherit;
+}
+
+button {
+cursor: pointer;
+background-color: transparent;
+background-image: none;
+}
+
+ul {
+list-style: none;
+}
+
+/* ==========================================================================
+2. CUSTOM PATTERNS, ANIMATIONS & EFFECTS
+========================================================================== */
+.kolam-pattern {
+background-color: var(--brand-cream);
+background-image: radial-gradient(var(--brand-orange) 0.75px, transparent 0.75px),
+radial-gradient(var(--brand-green) 0.75px, var(--brand-cream) 0.75px);
+background-size: 30px 30px;
+background-position: 0 0, 15px 15px;
+}
+
+.custom-shadow {
+box-shadow: 0 10px 25px -5px rgba(234, 88, 12, 0.1),
+0 8px 10px -6px rgba(234, 88, 12, 0.05);
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ==========================================================================
+3. BRAND COLORS & GRADIENTS
+========================================================================== */
+.text-brand-orange { color: var(--brand-orange); }
+.text-brand-amber { color: var(--brand-amber); }
+.text-brand-green { color: var(--brand-green); }
+
+.bg-brand-orange { background-color: var(--brand-orange); }
+.bg-brand-amber { background-color: var(--brand-amber); }
+.bg-brand-green { background-color: var(--brand-green); }
+
+.border-brand-orange { border-color: var(--brand-orange); }
+.border-brand-green { border-color: var(--brand-green); }
+
+.font-tamil { font-family: var(--font-tamil); }
+.font-display { font-family: var(--font-display); }
+
+/* Gradients */
+.bg-gradient-to-r.from-brand-orange.via-amber-600.to-brand-green {
+background-image: linear-gradient(to right, var(--brand-orange), #d97706, var(--brand-green));
+}
+
+.bg-gradient-to-br.from-brand-orange.to-amber-500 {
+background-image: linear-gradient(to bottom right, var(--brand-orange), var(--brand-amber));
+}
+
+.bg-gradient-to-r.from-brand-orange.to-amber-500 {
+background-image: linear-gradient(to right, var(--brand-orange), var(--brand-amber));
+}
+
+.bg-gradient-to-r.from-brand-orange.to-amber-500:hover {
+background-image: linear-gradient(to right, #ea580c, #d97706);
+}
+
+.bg-gradient-to-b.from-amber-50.via-white.to-amber-50 {
+background-image: linear-gradient(to bottom, #fffbeb, #ffffff, rgba(255, 251, 235, 0.5));
+}
+.bg-gradient-to-b.from-emerald-800.to-emerald-950 {
+background-image: linear-gradient(to bottom, #065f46, #022c22);
+}
+
+.bg-gradient-to-b.from-orange-50.to-white {
+background-image: linear-gradient(to bottom, rgba(255, 247, 237, 0.5), #ffffff);
+}
+
+.bg-gradient-to-b.from-emerald-50.to-white {
+background-image: linear-gradient(to bottom, rgba(236, 253, 245, 0.7), #ffffff);
+}
+
+.bg-gradient-to-b.from-amber-50to-white {
+background-image: linear-gradient(to bottom, rgba(255, 251, 235, 0.5), #ffffff);
+}
+
+.bg-gradient-to-r.from-emerald-600.to-brand-green {
+background-image: linear-gradient(to right, #059669, var(--brand-green));
+}
+
+.bg-gradient-to-b.from-amber-50.to-orange-50 {
+background-image: linear-gradient(to bottom, rgba(255, 251, 235, 0.5), rgba(255, 247, 237, 0.3));
+}
+
+.bg-clip-text {
+-webkit-background-clip: text;
+background-clip: text;
+}
+
+.text-transparent {
+color: transparent;
+}
+
+/* ==========================================================================
+4. LAYOUT & CONTAINERS
+========================================================================== */
+.max-w-7xl { max-width: 80rem; }
+.max-w-3xl { max-width: 48rem; }
+.max-w-2xl { max-width: 42rem; }
+.max-w-md  { max-width: 28rem; }
+.mx-auto   { margin-left: auto; margin-right: auto; }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.pt-8 { padding-top: 2rem; }
+.pb-16 { padding-bottom: 4rem; }
+.pt-16 { padding-top: 4rem; }
+.pb-12 { padding-bottom: 3rem; }
+
+/* Navigation Header */
+#mainHeader {
+position: sticky;
+top: 0;
+z-index: 50;
+background-color: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid #ffedd5;
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+5. COMPONENT-SPECIFIC STYLES
+========================================================================== */
+
+/* Cards & Rounded Containers */
+.rounded-lg   { border-radius: 0.5rem; }
+.rounded-xl   { border-radius: 0.75rem; }
+.rounded-2xl  { border-radius: 1rem; }
+.rounded-3xl  { border-radius: 1.5rem; }
+.rounded-full { border-radius: 9999px; }
+
+/* Shadows */
+.shadow-sm  { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+.shadow-md  { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); }
+.shadow-lg  { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+.shadow-xl  { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+
+/* Budget Calculator Interactive Controls */
+.event-type-btn {
+padding: 0.75rem;
+border-radius: 0.75rem;
+border: 1px solid #57534e;
+background-color: rgba(68, 64, 60, 0.5);
+transition: all 0.2s ease;
+text-align: center;
+}
+
+.event-type-btn:hover {
+background-color: #44403c;
+}
+
+.event-type-btn.active-btn {
+border-color: var(--brand-orange);
+background-color: rgba(67, 20, 7, 0.6);
+color: #fcd34d;
+}
+
+/* Custom Range Slider */
+input[type="range"] {
+-webkit-appearance: none;
+appearance: none;
+width: 100%;
+height: 0.5rem;
+background: #44403c;
+border-radius: 0.5rem;
+outline: none;
+accent-color: var(--brand-orange);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border-radius: 50%;
+background: var(--brand-orange);
+cursor: pointer;
+border: 2px solid #ffffff;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Inputs & Interactive Focus States */
+#cateringForm input,
+#cateringForm select,
+#cateringForm textarea {
+width: 100%;
+padding: 0.75rem 1rem;
+border-radius: 0.75rem;
+border: 1px solid #d6d3d1;
+font-size: 0.875rem;
+outline: none;
+transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#cateringForm input:focus,
+#cateringForm select:focus,
+#cateringForm textarea:focus {
+border-color: var(--brand-orange);
+box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2);
+}
+
+/* ==========================================================================
+6. RESPONSIVE BREAKPOINTS
+========================================================================== */
+@media (min-width: 640px) {
+.sm:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.sm:p-8  { padding: 2rem; }
+.sm:p-10 { padding: 2.5rem; }
+.sm:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.sm:text-5xl { font-size: 3rem; line-height: 1; }
+}
+
+@media (min-width: 768px) {
+.md:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.md:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+.lg:px-8 { padding-left: 2rem; padding-right: 2rem; }
+.lg:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.lg:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.lg:col-span-7 { grid-column: span 7 / span 7; }
+.lg:col-span-5 { grid-column: span 5 / span 5; }
+.lg:text-6xl { font-size: 3.75rem; line-height: 1.15; }
+}

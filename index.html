@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanban Catering (நண்பன் கேட்டரிங்) | Rasipuram</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&family=Noto+Sans+Tamil:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#EA580C',    // Turmeric spice / vermilion warm
+                            amber: '#F59E0B',     // Golden roasted aroma
+                            green: '#15803D',     // Fresh banana leaf emerald
+                            lightGreen: '#ECFDF5',
+                            dark: '#1C1917',      // Warm charcoal
+                            cream: '#FFFBEB'      // Traditional butter cream
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Rozha One"', 'serif'],
+                        tamil: ['"Noto Sans Tamil"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Decorative subtle pattern */
+        .kolam-pattern {
+            background-color: #fffbeb;
+            background-image: radial-gradient(#ea580c 0.75px, transparent 0.75px), radial-gradient(#15803d 0.75px, #fffbeb 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            /* background-opacity: 0.05; */
+        }
+
+        .custom-shadow {
+            box-shadow: 0 10px 25px -5px rgba(234, 88, 12, 0.1), 0 8px 10px -6px rgba(234, 88, 12, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-amber-50/30 text-stone-800 font-sans antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div
+        class="bg-gradient-to-r from-brand-orange via-amber-600 to-brand-green text-white text-xs sm:text-sm py-2 px-4 shadow-sm">
+        <div
+            class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
+            <div class="flex items-center gap-2 justify-center">
+                <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-white text-brand-orange animate-pulse">
+                    <i class="fa-solid fa-leaf mr-1"></i> 100% Homestyle Pure Taste
+                </span>
+                <span class="hidden md:inline">Serving Rasipuram, Namakkal & nearby regions</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-medium">
+                <a href="tel:+919876543210" class="hover:underline flex items-center gap-1">
+                    <i class="fa-solid fa-phone"></i> +91 98765 43210
+                </a>
+                <span class="opacity-60">•</span>
+                <span class="flex items-center gap-1">
+                    <i class="fa-regular fa-clock"></i> 6:00 AM - 10:30 PM
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <header
+        class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 shadow-sm transition-all duration-300"
+        id="mainHeader">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-orange to-amber-500 text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-105 transition-transform duration-200">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-extrabold tracking-tight text-stone-900 block leading-tight">
+                        Nanban <span class="text-brand-orange">Catering</span>
+                    </span>
+                    <span class="text-xs font-semibold text-brand-green font-tamil tracking-wide">
+                        நண்பன் கேட்டரிங் • ராசிபுரம்
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-stone-700">
+                <a href="#home" class="hover:text-brand-orange transition-colors">Home</a>
+                <a href="#specialties" class="hover:text-brand-orange transition-colors">Our Specialties</a>
+                <a href="#calculator" class="hover:text-brand-orange transition-colors">Budget Calculator</a>
+                <a href="#why-us" class="hover:text-brand-orange transition-colors">Why Nanban?</a>
+                <a href="#reviews" class="hover:text-brand-orange transition-colors">Reviews</a>
+                <a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/919876543210?text=Vanakkam%20Nanban%20Catering!%20I%20would%20like%20to%20enquire%20for%20catering%20service."
+                    target="_blank"
+                    class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow-emerald-200 hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="#contact"
+                    class="bg-gradient-to-r from-brand-orange to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md hover:shadow-orange-200 hover:-translate-y-0.5">
+                    Book Order
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu"
+                class="lg:hidden p-2 rounded-lg text-stone-700 hover:bg-orange-50 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu"
+            class="hidden lg:hidden border-t border-orange-100 bg-white px-5 pt-3 pb-6 space-y-3 transition-all duration-300">
+            <a href="#home"
+                class="mobile-nav-link block py-2 text-stone-800 font-medium hover:text-brand-orange">Home</a>
+            <a href="#specialties"
+                class="mobile-nav-link block py-2 text-stone-800 font-medium hover:text-brand-orange">Our
+                Specialties</a>
+            <a href="#calculator"
+                class="mobile-nav-link block py-2 text-stone-800 font-medium hover:text-brand-orange">Budget
+                Calculator</a>
+            <a href="#why-us" class="mobile-nav-link block py-2 text-stone-800 font-medium hover:text-brand-orange">Why
+                Choose Us</a>
+            <a href="#reviews"
+                class="mobile-nav-link block py-2 text-stone-800 font-medium hover:text-brand-orange">Customer
+                Reviews</a>
+            <a href="#contact"
+                class="mobile-nav-link block py-2 text-stone-800 font-medium hover:text-brand-orange">Contact &
+                Booking</a>
+            <div class="pt-3 border-t border-stone-100 flex flex-col gap-2">
+                <a href="tel:+919876543210"
+                    class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-orange-100 text-brand-orange font-semibold text-sm">
+                    <i class="fa-solid fa-phone"></i> Call Now (+91 98765 43210)
+                </a>
+                <a href="https://wa.me/919876543210?text=Vanakkam%20Nanban%20Catering!%20Need%20info%20about%20catering."
+                    target="_blank"
+                    class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Quick WhatsApp Enquiry
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home"
+        class="relative overflow-hidden pt-8 pb-16 lg:py-20 bg-gradient-to-b from-amber-50 via-white to-amber-50/50">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange-200/40 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute bottom-0 -left-20 w-80 h-80 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left Hero Copy -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+
+                    <!-- Badges -->
+                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-orange-100 text-brand-orange border border-orange-200">
+                            <i class="fa-solid fa-pepper-hot"></i> 100% Homestyle Recipe
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-brand-green border border-emerald-200">
+                            <i class="fa-solid fa-location-dot"></i> Rasipuram &bull; Namakkal
+                        </span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-black text-stone-900 tracking-tight leading-[1.15]">
+                        Delicious Homestyle Feast for <span
+                            class="bg-gradient-to-r from-brand-orange to-amber-500 bg-clip-text text-transparent">Every
+                            Celebration</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-stone-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        From piping hot morning tiffin to authentic banana-leaf lunch feasts and soothing evening
+                        dinners, <strong class="text-stone-800">Nanban Catering</strong> brings you mom’s traditional
+                        kitchen taste with immaculate hygiene.
+                    </p>
+
+                    <!-- Highlights Pills -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left">
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-stone-100 shadow-sm">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-orange-100 text-brand-orange flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-bowl-rice"></i>
+                            </div>
+                            <div class="text-xs">
+                                <span class="font-bold text-stone-800 block">Pure Cooking</span>
+                                <span class="text-stone-500">No harmful colors</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white border border-stone-100 shadow-sm">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-emerald-100 text-brand-green flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 p-3 rounded-xl bg-white border border-stone-100 shadow-sm col-span-2 sm:col-span-1">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-van-shuttle"></i>
+                            </div>
+                            <div class="text-xs">
+                                <span class="font-bold text-stone-800 block">Punctual Supply</span>
+                                <span class="text-stone-500">Always on time</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#calculator"
+                            class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-orange to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-base shadow-lg shadow-orange-500/25 transition-all text-center">
+                            <i class="fa-solid fa-calculator mr-2"></i> Calculate Catering Cost
+                        </a>
+                        <a href="#contact"
+                            class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-stone-50 text-stone-800 font-bold text-base border-2 border-stone-200 transition-all text-center">
+                            <i class="fa-solid fa-calendar-check text-brand-orange mr-2"></i> Book Event
+                        </a>
+                    </div>
+
+                    <!-- Trust Proof -->
+                    <div class="flex items-center justify-center lg:justify-start gap-6 pt-3 text-sm text-stone-500">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-amber-500 font-bold">★ 4.9/5</span>
+                            <span>(200+ Happy Functions)</span>
+                        </div>
+                        <span>•</span>
+                        <div>
+                            <span class="text-stone-800 font-semibold">50 to 700+</span> Guests
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Visual Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+
+                        <!-- Banana Leaf Feast Decorative Card -->
+                        <div
+                            class="bg-gradient-to-b from-emerald-800 to-emerald-950 p-6 sm:p-8 rounded-3xl text-white shadow-2xl relative overflow-hidden border-4 border-amber-400/40">
+                            <div class="absolute -right-12 -bottom-12 opacity-10 text-9xl">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+
+                            <div class="flex items-center justify-between border-b border-emerald-700/60 pb-4 mb-5">
+                                <div>
+                                    <span
+                                        class="text-xs uppercase tracking-widest text-amber-300 font-bold block">Signature
+                                        Thali</span>
+                                    <h3 class="text-xl sm:text-2xl font-bold">Rasipuram Traditional Virundhu</h3>
+                                </div>
+                                <span class="px-3 py-1 bg-amber-400 text-stone-900 rounded-full font-bold text-xs">
+                                    Homestyle
+                                </span>
+                            </div>
+
+                            <!-- Menu Showcase Items Inside Card -->
+                            <div class="space-y-3 text-sm text-emerald-100">
+                                <div
+                                    class="flex items-center gap-3 bg-emerald-900/60 p-2.5 rounded-xl border border-emerald-700/40">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-emerald-600/50 flex items-center justify-center text-amber-300">
+                                        <i class="fa-solid fa-sun"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <span class="font-bold text-white block">Morning Tiffin</span>
+                                        <span class="text-xs text-emerald-200">Malli Poo Idli, Ghee Vadai, Poori Masala,
+                                            3 Chutneys</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex items-center gap-3 bg-emerald-900/60 p-2.5 rounded-xl border border-emerald-700/40">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-emerald-600/50 flex items-center justify-center text-amber-300">
+                                        <i class="fa-solid fa-utensils"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <span class="font-bold text-white block">Aromas of Lunch</span>
+                                        <span class="text-xs text-emerald-200">Banana Leaf Virundhu, Special Briyani,
+                                            Kootu, Poriyal, Payasam</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex items-center gap-3 bg-emerald-900/60 p-2.5 rounded-xl border border-emerald-700/40">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-emerald-600/50 flex items-center justify-center text-amber-300">
+                                        <i class="fa-solid fa-moon"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <span class="font-bold text-white block">Evening / Dinner Delight</span>
+                                        <span class="text-xs text-emerald-200">Layered Parotta, Salna, Idiyappam,
+                                            Chapathi Kurma</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Quote callout in banner -->
+                            <div
+                                class="mt-6 pt-4 border-t border-emerald-700/60 flex items-center justify-between text-xs sm:text-sm">
+                                <div>
+                                    <span class="text-stone-300 block">Locally Prepared at</span>
+                                    <span class="font-bold text-amber-300 flex items-center gap-1">
+                                        <i class="fa-solid fa-map-pin"></i> Rasipuram, Tamil Nadu
+                                    </span>
+                                </div>
+                                <a href="#calculator"
+                                    class="bg-amber-400 hover:bg-amber-300 text-stone-900 font-bold px-3 py-1.5 rounded-lg text-xs transition">
+                                    Check Price <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MEAL SPECIALTIES SECTION -->
+    <section id="specialties" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="text-brand-orange font-bold text-sm tracking-wider uppercase bg-orange-50 px-3 py-1 rounded-full border border-orange-200">
+                    Our Special Menu Packages
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-3">
+                    Authentic Homestyle Tiffin, Lunch & Dinner
+                </h2>
+                <p class="text-stone-600 mt-3 text-base sm:text-lg">
+                    We use cold-pressed oils, fresh local vegetables from Rasipuram markets, and genuine hand-ground
+                    spices without artificial colors or preservatives.
+                </p>
+            </div>
+
+            <!-- Meal Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- CARD 1: Morning Tiffin -->
+                <div
+                    class="rounded-3xl bg-gradient-to-b from-orange-50/50 to-white border-2 border-orange-100 hover:border-brand-orange p-7 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-orange-100 group-hover:bg-brand-orange group-hover:text-white text-brand-orange flex items-center justify-center text-2xl transition-colors duration-300">
+                                <i class="fa-solid fa-mug-hot"></i>
+                            </div>
+                            <span
+                                class="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-orange-100 text-brand-orange rounded-full">
+                                6:30 AM - 10:30 AM
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-stone-900 group-hover:text-brand-orange transition-colors">
+                            Morning Tiffin
+                        </h3>
+                        <p class="text-stone-500 text-sm mt-1 mb-6">Crispy, fragrant, and light on the stomach. Perfect
+                            for muhurtham and morning rituals.</p>
+
+                        <ul class="space-y-3 text-stone-700 text-sm">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Malli Poo Idli</strong> with piping hot Drumstick Sambar</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Medu Vada</strong> (Crispy golden fried, soaked in aroma)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Special Onion Dosa</strong> (Crispy)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Poori with Potato Masala</strong> / Ghee Pongal </span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Trio Chutneys</strong> (Coconut, Tomato-Garlic & Mint)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Briyani</strong> (Vegetable/ Mushroom)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Kesari</strong> / Sweet Pongal</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-5 border-t border-stone-100">
+                        <button onclick="selectPackageForCalc('tiffin')"
+                            class="w-full py-2.5 px-4 rounded-xl font-bold text-sm bg-orange-50 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors flex items-center justify-center gap-2">
+                            Select Tiffin Menu <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Grand Lunch (Featured) -->
+                <div
+                    class="rounded-3xl bg-gradient-to-b from-emerald-50/70 to-white border-2 border-emerald-500 p-7 transition-all duration-300 shadow-lg hover:shadow-2xl relative flex flex-col justify-between">
+                    <div
+                        class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-brand-green text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5">
+                        <i class="fa-solid fa-crown text-amber-300"></i> Most Popular Virundhu
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-5 mt-2">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-green flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-bowl-food"></i>
+                            </div>
+                            <span
+                                class="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-emerald-100 text-brand-green rounded-full">
+                                12:00 PM - 3:30 PM
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-stone-900">
+                            Grand Lunch Virundhu
+                        </h3>
+                        <p class="text-stone-500 text-sm mt-1 mb-6">Traditional Elaipaadu banana leaf feast with
+                            heartfelt Kongu & Tamil hospitality.</p>
+
+                        <ul class="space-y-3 text-stone-700 text-sm">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Steamed Ponni Rice</strong> with Pure Ghee & Paruppu</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Kongu Style Sambar, Rasam & Karakuzhambu</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Briyani Special</strong> (Veg Dum / Mushroom / Jeera Samba)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Sides:</strong> Parupu Vadai / Mysure Bonda, Kootu, Poriyal & Crisp
+                                    Appalam</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Curd</strong> with homemade Rasipuram Lemon pickle</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Payasam</strong>(Semiya / Pasiparupu)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-5 border-t border-stone-100">
+                        <button onclick="selectPackageForCalc('lunch')"
+                            class="w-full py-2.5 px-4 rounded-xl font-bold text-sm bg-brand-green text-white hover:bg-emerald-800 transition-colors flex items-center justify-center gap-2">
+                            Select Lunch Menu <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Dinner Delights -->
+                <div
+                    class="rounded-3xl bg-gradient-to-b from-amber-50/50 to-white border-2 border-amber-100 hover:border-amber-500 p-7 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-amber-100 group-hover:bg-amber-600 group-hover:text-white text-amber-700 flex items-center justify-center text-2xl transition-colors duration-300">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                            <span
+                                class="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-amber-100 text-amber-700 rounded-full">
+                                7:00 PM - 10:30 PM
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-stone-900 group-hover:text-amber-700 transition-colors">
+                            Dinner Delights
+                        </h3>
+                        <p class="text-stone-500 text-sm mt-1 mb-6">Mouth-watering warm varieties cooked hot & served
+                            crisp for night receptions.</p>
+
+                        <ul class="space-y-3 text-stone-700 text-sm">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Flaky Coin Parotta</strong> with spicy veg salna / kurma</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Soft Wheat Chapathi</strong> with Veg Kurma</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>String Hoppers (Idiyappam)</strong> with Coconut Milk / Veg Stew</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong> Kal Dosa / Onion Uthappam / Podi Dosa</strong></span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                                <span><strong>Hot Badam Milk</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-5 border-t border-stone-100">
+                        <button onclick="selectPackageForCalc('dinner')"
+                            class="w-full py-2.5 px-4 rounded-xl font-bold text-sm bg-amber-50 text-amber-800 hover:bg-amber-600 hover:text-white transition-colors flex items-center justify-center gap-2">
+                            Select Dinner Menu <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Custom Requirement Note -->
+            <div
+                class="mt-12 bg-amber-50/80 border border-amber-200 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-brand-orange text-white flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-stone-800 text-base">Planning a Wedding, Engagement, or Ear Piercing
+                            Function?</h4>
+                        <p class="text-stone-600 text-sm">We provide all-day customized full catering combos (Tiffin +
+                            Lunch + Evening Snacks + Dinner) with live Ice Creame & Sweet Beeda stalls.</p>
+                    </div>
+                </div>
+                <a href="#contact"
+                    class="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-sm font-semibold whitespace-nowrap">
+                    Custom Menu Enquiries
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE BUDGET CALCULATOR SECTION -->
+    <section id="calculator" class="py-20 bg-stone-900 text-white relative overflow-hidden">
+        <!-- Glow effects -->
+        <div
+            class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-brand-orange/15 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-green/15 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span
+                    class="text-amber-400 font-bold text-xs tracking-wider uppercase bg-white/10 px-3.5 py-1.5 rounded-full border border-white/20">
+                    <i class="fa-solid fa-calculator mr-1"></i> Transparent Pricing
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black mt-4">
+                    Instant Catering Cost Calculator
+                </h2>
+                <p class="text-stone-300 mt-2 text-base">
+                    Get an immediate budget estimate tailored for your event guest count and meal preferences in
+                    Rasipuram and nearby towns.
+                </p>
+            </div>
+
+            <div class="bg-stone-800/90 rounded-3xl border border-stone-700 p-6 sm:p-10 shadow-2xl backdrop-blur-md">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+                    <!-- Configuration Controls (Left 7 Cols) -->
+                    <div class="lg:col-span-7 space-y-6">
+
+                        <!-- 1. Event Type -->
+                        <div>
+                            <label class="block text-sm font-bold text-stone-300 mb-2">
+                                1. Select Occasion / Event Type
+                            </label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                <button type="button" onclick="setEventType('Wedding')"
+                                    class="event-type-btn p-3 rounded-xl border border-stone-600 bg-stone-700/50 hover:bg-stone-700 text-xs sm:text-sm font-medium transition text-center active-btn"
+                                    data-type="Wedding">
+                                    <i class="fa-solid fa-ring block text-lg mb-1 text-amber-400"></i> Wedding /
+                                    Reception
+                                </button>
+                                <button type="button" onclick="setEventType('Birthday')"
+                                    class="event-type-btn p-3 rounded-xl border border-stone-600 bg-stone-700/50 hover:bg-stone-700 text-xs sm:text-sm font-medium transition text-center"
+                                    data-type="Birthday">
+                                    <i class="fa-solid fa-cake-candles block text-lg mb-1 text-amber-400"></i> Birthday
+                                    Party
+                                </button>
+                                <button type="button" onclick="setEventType('Housewarming')"
+                                    class="event-type-btn p-3 rounded-xl border border-stone-600 bg-stone-700/50 hover:bg-stone-700 text-xs sm:text-sm font-medium transition text-center"
+                                    data-type="Housewarming">
+                                    <i class="fa-solid fa-house-chimney block text-lg mb-1 text-amber-400"></i>
+                                    Housewarming (Grahapravesam)
+                                </button>
+                                <button type="button" onclick="setEventType('Family Gathering')"
+                                    class="event-type-btn p-3 rounded-xl border border-stone-600 bg-stone-700/50 hover:bg-stone-700 text-xs sm:text-sm font-medium transition text-center"
+                                    data-type="Family Gathering">
+                                    <i class="fa-solid fa-users block text-lg mb-1 text-amber-400"></i> Family Function
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Meal Option -->
+                        <div>
+                            <label class="block text-sm font-bold text-stone-300 mb-2">
+                                2. Select Meal Arrangement
+                            </label>
+                            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2" id="mealSelectorGroup">
+                                <label
+                                    class="cursor-pointer p-3 rounded-xl border border-stone-600 bg-stone-700/40 hover:bg-stone-700/80 transition flex sm:flex-col items-center justify-between sm:justify-center text-center gap-2">
+                                    <input type="radio" name="mealChoice" value="tiffin" class="accent-orange-500"
+                                        onchange="calculateCost()">
+                                    <span class="text-sm font-semibold">Tiffin Only</span>
+                                    <span class="text-xs text-amber-400 font-mono">₹110 / plate</span>
+                                </label>
+                                <label
+                                    class="cursor-pointer p-3 rounded-xl border border-stone-600 bg-stone-700/40 hover:bg-stone-700/80 transition flex sm:flex-col items-center justify-between sm:justify-center text-center gap-2">
+                                    <input type="radio" name="mealChoice" value="lunch" checked
+                                        class="accent-orange-500" onchange="calculateCost()">
+                                    <span class="text-sm font-semibold">Lunch Virundhu</span>
+                                    <span class="text-xs text-amber-400 font-mono">₹130 / plate</span>
+                                </label>
+                                <label
+                                    class="cursor-pointer p-3 rounded-xl border border-stone-600 bg-stone-700/40 hover:bg-stone-700/80 transition flex sm:flex-col items-center justify-between sm:justify-center text-center gap-2">
+                                    <input type="radio" name="mealChoice" value="dinner" class="accent-orange-500"
+                                        onchange="calculateCost()">
+                                    <span class="text-sm font-semibold">Dinner Only</span>
+                                    <span class="text-xs text-amber-400 font-mono">₹130 / plate</span>
+                                </label>
+                                <label
+                                    class="cursor-pointer p-3 rounded-xl border border-orange-500 bg-orange-950/40 hover:bg-orange-900/60 transition flex sm:flex-col items-center justify-between sm:justify-center text-center gap-2">
+                                    <input type="radio" name="mealChoice" value="fullday" class="accent-orange-500"
+                                        onchange="calculateCost()">
+                                    <span class="text-sm font-semibold text-orange-200">Full Day Combo</span>
+                                    <span class="text-xs text-amber-300 font-mono">₹360 / person</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 3. Guest Count Slider -->
+                        <div class="bg-stone-900/60 p-4 rounded-2xl border border-stone-700">
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="guestRange" class="text-sm font-bold text-stone-300">
+                                    3. Number of Expected Guests
+                                </label>
+                                <div
+                                    class="flex items-center gap-1 bg-stone-800 px-3 py-1 rounded-lg border border-stone-600">
+                                    <input type="number" id="guestCountInput" min="20" max="3000" value="150"
+                                        class="w-16 bg-transparent text-right font-mono font-bold text-amber-400 focus:outline-none"
+                                        oninput="syncGuests(this.value)">
+                                    <span class="text-xs text-stone-400">Pax</span>
+                                </div>
+                            </div>
+                            <input type="range" id="guestRange" min="20" max="1500" step="10" value="150"
+                                class="w-full accent-brand-orange h-2 bg-stone-700 rounded-lg cursor-pointer"
+                                oninput="syncGuests(this.value)">
+                            <div class="flex justify-between text-[11px] text-stone-500 mt-1 font-mono">
+                                <span>Min: 50 guests</span>
+                                <span>250</span>
+                                <span>500</span>
+                                <span>700+ guests</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. Optional Add-ons -->
+                        <div>
+                            <label class="block text-sm font-bold text-stone-300 mb-2">
+                                4. Popular Add-on Stalls (Optional)
+                            </label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <label
+                                    class="flex items-center gap-2.5 p-3 rounded-xl bg-stone-900/40 border border-stone-700 hover:border-stone-500 cursor-pointer">
+                                    <input type="checkbox" id="addonFilterCoffee" value="20"
+                                        class="accent-orange-500 w-4 h-4 rounded" onchange="calculateCost()">
+                                    <div>
+                                        <span class="font-bold text-stone-200 block">Fruit Salad</span>
+                                        <span class="text-stone-400">+₹30 / person</span>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center gap-2.5 p-3 rounded-xl bg-stone-900/40 border border-stone-700 hover:border-stone-500 cursor-pointer">
+                                    <input type="checkbox" id="addonLiveSweet" value="30"
+                                        class="accent-orange-500 w-4 h-4 rounded" onchange="calculateCost()">
+                                    <div>
+                                        <span class="font-bold text-stone-200 block">Live Popcorn Counter</span>
+                                        <span class="text-stone-400">+₹30 / person</span>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center gap-2.5 p-3 rounded-xl bg-stone-900/40 border border-stone-700 hover:border-stone-500 cursor-pointer">
+                                    <input type="checkbox" id="addonIcecream" value="25"
+                                        class="accent-orange-500 w-4 h-4 rounded" onchange="calculateCost()">
+                                    <div>
+                                        <span class="font-bold text-stone-200 block">Dessert & Ice Cream Cup</span>
+                                        <span class="text-stone-400">+₹25 / person</span>
+                                    </div>
+                                </label>
+                                <label
+                                    class="flex items-center gap-2.5 p-3 rounded-xl bg-stone-900/40 border border-stone-700 hover:border-stone-500 cursor-pointer">
+                                    <input type="checkbox" id="addonBananaLeaf" checked value="0"
+                                        class="accent-orange-500 w-4 h-4 rounded" onchange="calculateCost()">
+                                    <div>
+                                        <span class="font-bold text-emerald-400 block">Fresh Banana Leaf & Water
+                                            Bottel</span>
+                                        <span class="text-stone-400">If you want</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Estimation Breakdown (Right 5 Cols) -->
+                    <div
+                        class="lg:col-span-5 bg-stone-900 rounded-2xl border-2 border-amber-500/30 p-6 flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
+                                <span class="text-xs uppercase tracking-wider text-amber-400 font-bold">Estimate
+                                    Summary</span>
+                                <span
+                                    class="text-xs bg-emerald-950 text-emerald-300 border border-emerald-800 px-2 py-0.5 rounded">Homestyle
+                                    Quality</span>
+                            </div>
+
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-stone-400">
+                                    <span>Occasion:</span>
+                                    <span id="summaryEvent" class="text-white font-medium">Wedding</span>
+                                </div>
+                                <div class="flex justify-between text-stone-400">
+                                    <span>Guest Count:</span>
+                                    <span id="summaryGuests" class="text-white font-medium">150 Guests</span>
+                                </div>
+                                <div class="flex justify-between text-stone-400">
+                                    <span>Base Rate / Plate:</span>
+                                    <span id="summaryRate" class="text-white font-medium">₹160</span>
+                                </div>
+                                <div class="flex justify-between text-stone-400">
+                                    <span>Selected Add-ons / Plate:</span>
+                                    <span id="summaryAddons" class="text-white font-medium">₹0</span>
+                                </div>
+                                <div class="flex justify-between text-stone-400">
+                                    <span>Estimated Rate / Plate:</span>
+                                    <span id="summaryTotalPerPlate" class="text-amber-400 font-bold">₹160</span>
+                                </div>
+                            </div>
+
+                            <!-- Grand Total Box -->
+                            <div class="mt-6 pt-4 border-t border-stone-800 bg-stone-950/60 p-4 rounded-xl">
+                                <span class="text-xs text-stone-400 block font-medium">Estimated Catering Budget:</span>
+                                <div class="flex items-baseline gap-2 mt-1">
+                                    <span
+                                        class="text-3xl sm:text-4xl font-black text-amber-400 font-mono tracking-tight"
+                                        id="summaryTotalCost">₹24,000</span>
+                                    <span class="text-xs text-stone-400">*Approx.</span>
+                                </div>
+                                <p class="text-[11px] text-stone-500 mt-2">
+                                    *Final price can vary slightly based on specific customized sweets or live counters
+                                    requested. No hidden charges!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Booking Action -->
+                        <div class="mt-6 space-y-2">
+                            <button onclick="enquireCurrentPackage()"
+                                class="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/40">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Lock This Deal on WhatsApp
+                            </button>
+                            <p class="text-center text-xs text-stone-400">
+                                Direct chat with Proprietor &bull; Instant Confirmation
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US & SERVICE AREAS -->
+    <section id="why-us" class="py-20 bg-amber-50/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left: Why Us Grid -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span
+                        class="text-brand-orange font-bold text-sm tracking-wider uppercase bg-orange-100 px-3.5 py-1 rounded-full">
+                        Our Promise to You
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900">
+                        Why Rasipuram Families Trust Nanban Catering
+                    </h2>
+                    <p class="text-stone-600 text-base">
+                        Food is the memory guests take home from any event. At Nanban Catering, our cooks take pride in
+                        traditional hand-grinding recipes, rich aroma, and hospitality just like serving in your own
+                        home.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+
+                        <div
+                            class="p-4 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-sm">Real Homestyle Flavors</h4>
+                                <p class="text-xs text-stone-500 mt-1">No artificial flavor enhancers (No Ajinomoto),
+                                    mild spices suited for kids and elders alike.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-hand-holding-droplet"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-sm">Unmatched Hygiene</h4>
+                                <p class="text-xs text-stone-500 mt-1">Stainless steel vessels, capped staff, purified
+                                    RO water used for all cooking preparations.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-sm">Punctual Hot Serving</h4>
+                                <p class="text-xs text-stone-500 mt-1">Insulated containers guarantee that morning idlis
+                                    and afternoon sambar are piping hot.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-people-carry-box"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-sm">Trained Service Crew</h4>
+                                <p class="text-xs text-stone-500 mt-1">Courteous, neatly dressed serving personnel
+                                    treating every guest with traditional warmth.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Delivery Network Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-orange-200 shadow-xl relative">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-location-crosshairs"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-stone-900">Service & Supply Areas</h3>
+                                <p class="text-xs text-stone-500">Fast delivery with zero taste delay</p>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-stone-600 mb-6 leading-relaxed">
+                            Based proudly in <strong>Rasipuram</strong>, we cater to all nearby mandapams, homes, and
+                            banquet halls across the Salem-Namakkal belt:
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div
+                                class="bg-amber-50 p-3 rounded-xl border border-amber-200/60 text-xs font-semibold text-stone-800 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-orange"></i> Rasipuram Town & Rural
+                            </div>
+                            <div
+                                class="bg-amber-50 p-3 rounded-xl border border-amber-200/60 text-xs font-semibold text-stone-800 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-orange"></i> Namakkal Central
+                            </div>
+                            <div
+                                class="bg-amber-50 p-3 rounded-xl border border-amber-200/60 text-xs font-semibold text-stone-800 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-orange"></i> Salem & Surrounding
+                            </div>
+                            <div
+                                class="bg-amber-50 p-3 rounded-xl border border-amber-200/60 text-xs font-semibold text-stone-800 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-orange"></i> Vennandur & Attayampatti
+                            </div>
+                            <div
+                                class="bg-amber-50 p-3 rounded-xl border border-amber-200/60 text-xs font-semibold text-stone-800 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-orange"></i> Puduchatram & Kalappanayakkanpatti
+                            </div>
+                            <div
+                                class="bg-amber-50 p-3 rounded-xl border border-amber-200/60 text-xs font-semibold text-stone-800 flex items-center gap-2">
+                                <i class="fa-solid fa-check text-brand-orange"></i> Mallur & Nearby Villages
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 rounded-xl bg-orange-50 border border-orange-200 text-xs text-brand-orange font-medium flex items-center justify-between">
+                            <span>Have a function in a nearby village?</span>
+                            <a href="tel:+919876543210" class="font-bold underline text-stone-900">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS / TESTIMONIALS -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span
+                    class="text-emerald-700 font-bold text-xs uppercase tracking-wider bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
+                    Happy Family Feedback
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-3">
+                    What Rasipuram People Say About Us
+                </h2>
+                <p class="text-stone-500 mt-2 text-sm sm:text-base">
+                    Real reviews from housewarmings, weddings, and family get-togethers.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Review 1 -->
+                <div
+                    class="bg-stone-50 rounded-2xl p-6 border border-stone-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm italic leading-relaxed">
+                            "We ordered lunch virundhu for our son's ear piercing ceremony in Rasipuram for 250 guests.
+                            The Sambar, Elaneer Payasam, and hot vadai were praised by all our relatives. Authentic
+                            homestyle taste without burning thirst afterwards."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6 pt-4 border-t border-stone-200">
+                        <div
+                            class="w-10 h-10 rounded-full bg-orange-200 text-brand-orange font-bold flex items-center justify-center text-sm">
+                            S
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-stone-800">Senthil Kumar M.</h5>
+                            <span class="text-xs text-stone-500">Mullai Nagar, Rasipuram</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div
+                    class="bg-stone-50 rounded-2xl p-6 border border-stone-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm italic leading-relaxed">
+                            "Nanban Catering handled our morning tiffin and evening reception dinner. The live dosa
+                            counter and hot filter coffee were exceptional! They arrived 1 hour before scheduled time
+                            and served with extreme patience."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6 pt-4 border-t border-stone-200">
+                        <div
+                            class="w-10 h-10 rounded-full bg-emerald-200 text-brand-green font-bold flex items-center justify-center text-sm">
+                            K
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-stone-800">Kavitha & Ramesh</h5>
+                            <span class="text-xs text-stone-500">Namakkal Road</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div
+                    class="bg-stone-50 rounded-2xl p-6 border border-stone-200/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm italic leading-relaxed">
+                            "Affordable budget with zero compromise in taste. They provided fresh banana leaves, water
+                            bottles, and clean disposal without us needing to manage anything. Nanban Catering is now
+                            our family caterer."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6 pt-4 border-t border-stone-200">
+                        <div
+                            class="w-10 h-10 rounded-full bg-amber-200 text-amber-800 font-bold flex items-center justify-center text-sm">
+                            P
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-stone-800">P. Vijayaraghavan</h5>
+                            <span class="text-xs text-stone-500">Salem - Rasipuram Main</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT & BOOKING FORM SECTION -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-amber-50/50 to-orange-50/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                <!-- Left: Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span
+                            class="text-brand-orange font-bold text-xs uppercase tracking-wider bg-orange-100 px-3 py-1 rounded-full">
+                            Get in Touch
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-3">
+                            Book Your Catering Date With Us
+                        </h2>
+                        <p class="text-stone-600 mt-2 text-sm sm:text-base">
+                            Call us or send a direct inquiry to discuss custom menus, sample tasting, or to book dates
+                            well ahead of the wedding season.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+
+                        <!-- Address -->
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/80 shadow-sm">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-sm">Main Kitchen & Office</h4>
+                                <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+                                    Nanban Catering, Near New Bus Stand, Salem Main Road, Rasipuram - 637408, Namakkal
+                                    District, Tamil Nadu.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/80 shadow-sm">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-sm">Direct Phone Call</h4>
+                                <p class="text-xs text-stone-600 mt-1">
+                                    <a href="tel:+919876543210"
+                                        class="hover:text-brand-orange font-bold text-stone-900 text-sm block">+91 98765
+                                        43210</a>
+                                    <a href="tel:+919443210987"
+                                        class="hover:text-brand-orange font-semibold text-stone-700 text-xs block mt-0.5">+91
+                                        94432 10987</a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <!-- Operating Hours -->
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/80 shadow-sm">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-800 text-sm">Booking Hours</h4>
+                                <p class="text-xs text-stone-600 mt-1">
+                                    Monday to Sunday: 6:00 AM - 10:00 PM <br>
+                                    <span class="text-brand-green font-semibold">Immediate phone response</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Direct WhatsApp Quick Card -->
+                    <div class="p-5 rounded-2xl bg-emerald-800 text-white shadow-lg flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-3xl text-emerald-300"></i>
+                            <div>
+                                <h5 class="font-bold text-sm">Chat on WhatsApp</h5>
+                                <p class="text-xs text-emerald-100">Send menu requirements instantly</p>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/919876543210?text=Vanakkam%20Nanban%20Catering!%20Need%20info%20for%20an%20upcoming%20event."
+                            target="_blank"
+                            class="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs rounded-xl transition">
+                            Open Chat
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-6 sm:p-10 border border-stone-200 shadow-xl">
+                        <h3 class="text-2xl font-bold text-stone-900 mb-2">Send an Enquiry / Booking Request</h3>
+                        <p class="text-xs sm:text-sm text-stone-500 mb-6">
+                            Fill in your event details below and either submit online or send directly through WhatsApp.
+                        </p>
+
+                        <form id="cateringForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-stone-700 mb-1" for="custName">Your Full
+                                        Name *</label>
+                                    <input type="text" id="custName" required placeholder="e.g. Ramesh Kumar"
+                                        class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange text-sm outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-stone-700 mb-1" for="custPhone">Phone
+                                        Number *</label>
+                                    <input type="tel" id="custPhone" required placeholder="e.g. 98765 43210"
+                                        class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange text-sm outline-none">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-stone-700 mb-1" for="eventDate">Event
+                                        Date *</label>
+                                    <input type="date" id="eventDate" required
+                                        class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange text-sm outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-stone-700 mb-1"
+                                        for="eventGuestCount">Expected Guests *</label>
+                                    <input type="number" id="eventGuestCount" min="20" required placeholder="e.g. 200"
+                                        class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange text-sm outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-stone-700 mb-1" for="mealPref">Meal
+                                        Required *</label>
+                                    <select id="mealPref"
+                                        class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange text-sm outline-none bg-white">
+                                        <option value="Morning Tiffin">Morning Tiffin</option>
+                                        <option value="Grand Lunch Virundhu" selected>Grand Lunch Virundhu</option>
+                                        <option value="Dinner Delights">Dinner Delights</option>
+                                        <option value="Full Day Package">Full Day Package (Tiffin+Lunch+Dinner)</option>
+                                        <option value="Custom Combo">Customized Combo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-stone-700 mb-1" for="eventLocation">Event
+                                    Location / Hall Name & City *</label>
+                                <input type="text" id="eventLocation" required
+                                    placeholder="e.g. Rasipuram Town / Wedding Hall / Namakkal"
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange text-sm outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-stone-700 mb-1" for="specialNotes">Special
+                                    Requests / Menu Preferences</label>
+                                <textarea id="specialNotes" rows="3"
+                                    placeholder="Tell us if you need live dosa stall, specific sweets like Mysore Pak or Elaneer Payasam..."
+                                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange text-sm outline-none"></textarea>
+                            </div>
+
+                            <!-- Action buttons -->
+                            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                                <button type="button" onclick="sendViaWhatsApp()"
+                                    class="flex-1 py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-md">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i> Book via WhatsApp
+                                </button>
+                                <button type="submit"
+                                    class="flex-1 py-3.5 px-4 rounded-xl bg-brand-orange hover:bg-orange-700 text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-md">
+                                    <i class="fa-solid fa-paper-plane"></i> Submit Request
+                                </button>
+                            </div>
+
+                            <!-- Message confirmation placeholder -->
+                            <div id="formSuccessMessage"
+                                class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold text-center">
+                                <i class="fa-solid fa-circle-check text-emerald-600 mr-1 text-sm"></i>
+                                Thank you! We received your enquiry. Our Rasipuram team will call you within 30 minutes!
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-stone-950 text-stone-300 pt-16 pb-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-brand-orange text-white flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-black text-white block leading-tight">Nanban Catering</span>
+                            <span class="text-xs text-amber-400 font-tamil">நண்பன் கேட்டரிங்</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Delivering authentic Tamil homestyle catering taste for weddings, birthdays, housewarmings, and
+                        all celebrations in Rasipuram, Namakkal, and Salem.
+                    </p>
+                    <div class="flex items-center gap-3 text-stone-400">
+                        <a href="#"
+                            class="w-8 h-8 rounded-lg bg-stone-900 hover:bg-brand-orange hover:text-white flex items-center justify-center text-sm transition"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-lg bg-stone-900 hover:bg-brand-orange hover:text-white flex items-center justify-center text-sm transition"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-lg bg-stone-900 hover:bg-brand-orange hover:text-white flex items-center justify-center text-sm transition"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/919876543210"
+                            class="w-8 h-8 rounded-lg bg-stone-900 hover:bg-brand-orange hover:text-white flex items-center justify-center text-sm transition"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-stone-400">
+                        <li><a href="#home" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="#specialties" class="hover:text-amber-400 transition">Meal Specialties
+                                (Tiffin/Lunch/Dinner)</a></li>
+                        <li><a href="#calculator" class="hover:text-amber-400 transition">Live Cost Calculator</a></li>
+                        <li><a href="#why-us" class="hover:text-amber-400 transition">Why Choose Nanban</a></li>
+                        <li><a href="#reviews" class="hover:text-amber-400 transition">Customer Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-amber-400 transition">Contact & Booking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Specialties -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase">Our Services</h4>
+                    <ul class="space-y-2 text-xs text-stone-400">
+                        <li>Traditional Banana Leaf Virundhu</li>
+                        <li>Morning Breakfast & Tiffin Live Counters</li>
+                        <li>Reception Dinner & Parotta Counters</li>
+                        <li>Seemantham & Grahapravesam Catering</li>
+                        <li>Birthday Party & Bulk Food Delivery</li>
+                        <li>Punctual Delivery in Rasipuram & Salem</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact details -->
+                <div class="space-y-3">
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase">Rasipuram Kitchen</h4>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Near New Bus Stand, Salem Main Road,<br>
+                        Rasipuram, Tamil Nadu - 637408.
+                    </p>
+                    <div class="text-xs text-stone-300 space-y-1">
+                        <p><i class="fa-solid fa-phone text-amber-400 mr-2"></i> +91 98765 43210</p>
+                        <p><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> info@nanbancatering.com</p>
+                        <p><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Rasipuram, Namakkal Dt.</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Copyright bar -->
+            <div
+                class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-3 text-center sm:text-left">
+                <p>&copy; <span id="currentYear"></span> Nanban Catering (நண்பன் கேட்டரிங்). All rights reserved.</p>
+                <p class="text-stone-400">Pure Homestyle Delights &bull; Rasipuram & Surroundings</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- FLOATING QUICK CALL / WHATSAPP PILL FOR MOBILE -->
+    <div class="fixed bottom-4 right-4 z-40 sm:hidden flex items-center gap-2">
+        <a href="tel:+919876543210"
+            class="w-12 h-12 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-lg active:scale-95 transition">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="https://wa.me/919876543210?text=Vanakkam%20Nanban%20Catering!%20Need%20info%20about%20catering."
+            target="_blank"
+            class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-lg active:scale-95 transition">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
