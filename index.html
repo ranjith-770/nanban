@@ -673,24 +673,23 @@
                 <label for="guestRange" class="text-sm font-bold text-stone-300">
                   3. Number of Expected Guests
                 </label>
+                <div class="bg-stone-900/60 p-4 rounded-2xl border border-stone-700">
+              <div class="flex items-center justify-between mb-2">
+                <label for="guestRange" class="text-sm font-bold text-stone-300">
+                  3. Number of Expected Guests
+                </label>
                 <div class="flex items-center gap-1 bg-stone-800 px-3 py-1 rounded-lg border border-stone-600">
-                  <input type="number" id="guestCountInput" min="50" max="1000" value="150"
-                    class="w-16 bg-transparent text-right font-mono font-bold text-amber-400 focus:outline-none"
-                    oninput="syncGuests(this.value)">
+                  <input type="number" id="guestCountInput" min="50" max="1000" value="250" class="w-16 bg-transparent text-right font-mono font-bold text-amber-400 focus:outline-none" oninput="syncGuests(this.value)">
                   <span class="text-xs text-stone-400">Pax</span>
                 </div>
               </div>
-              <input type="range" id="guestRange" min="50" max="1000" step="10" value="150"
-                class="w-full accent-brand-orange h-2 bg-stone-700 rounded-lg cursor-pointer"
-                oninput="syncGuests(this.value)">
-              <div class="flex justify-between text-[11px] text-stone-400 mt-1.5 font-mono">
-                <button type="button" onclick="syncGuests(50)" class="hover:text-amber-400 transition cursor-pointer">Min: 50</button>
-                <button type="button" onclick="syncGuests(100)" class="hover:text-amber-400 transition cursor-pointer">100</button>
-                <button type="button" onclick="syncGuests(150)" class="hover:text-amber-400 transition cursor-pointer">150</button>
-                <button type="button" onclick="syncGuests(250)" class="hover:text-amber-400 transition cursor-pointer">250</button>
-                <button type="button" onclick="syncGuests(500)" class="hover:text-amber-400 transition cursor-pointer">500</button>
-                <button type="button" onclick="syncGuests(750)" class="hover:text-amber-400 transition cursor-pointer">750</button>
-                <button type="button" onclick="syncGuests(1000)" class="hover:text-amber-400 transition cursor-pointer">1000+</button>
+              <input type="range" id="guestRange" min="50" max="1000" step="10" value="250" class="w-full accent-brand-orange h-2 bg-stone-700 rounded-lg cursor-pointer" oninput="syncGuests(this.value)">
+              <div class="relative h-5 text-[11px] text-stone-400 mt-1.5 font-mono">
+                <button type="button" onclick="syncGuests(50)" style="left: 0%;" class="absolute -translate-x-0 hover:text-amber-400 transition cursor-pointer">50</button>
+                <button type="button" onclick="syncGuests(250)" style="left: 21%;" class="absolute -translate-x-1/2 hover:text-amber-400 transition cursor-pointer">250</button>
+                <button type="button" onclick="syncGuests(500)" style="left: 47.4%;" class="absolute -translate-x-1/2 hover:text-amber-400 transition cursor-pointer">500</button>
+                <button type="button" onclick="syncGuests(750)" style="left: 73.7%;" class="absolute -translate-x-1/2 hover:text-amber-400 transition cursor-pointer">750</button>
+                <button type="button" onclick="syncGuests(1000)" style="right: 0%;" class="absolute translate-x-0 hover:text-amber-400 transition cursor-pointer">1000+</button>
               </div>
             </div>
 
