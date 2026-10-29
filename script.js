@@ -1,7 +1,29 @@
-/* ==========================================================================
-   NANBAN CATERING - COMPLETE INTERACTIVE JAVASCRIPT
-   Handles Mobile Navigation, Live Budget Calculator, & WhatsApp Bookings
-   ========================================================================== */
+// 👇 CHANGE YOUR WHATSAPP NUMBER HERE (You can type your 10-digit number or with 91)
+// ============================================================================
+const WHATSAPP_NUMBER = '918220462992';
+
+/**
+ * Automatically cleans the phone number (removes +, spaces, dashes)
+ * and ensures India country code '91' is included so WhatsApp never fails.
+ */
+function getCleanWhatsAppNumber() {
+  let digits = String(WHATSAPP_NUMBER).replace(/\D/g, '');
+  if (digits.length === 10) {
+    digits = '91' + digits;
+  }
+  return digits;
+}
+
+/**
+ * Opens a direct WhatsApp chat with a custom or default greeting message
+ * @param {string} customText - Optional pre-filled message
+ */
+function openQuickWhatsApp(customText) {
+  const phone = getCleanWhatsAppNumber();
+  const defaultMsg = 'Vanakkam Nanban Catering! I would like to enquire about your catering services and menu packages.';
+  const textToSend = customText ? customText : encodeURIComponent(defaultMsg);
+  window.open(`https://wa.me/${phone}?text=${textToSend}`, '_blank');
+}
 
 // Global State for Calculator
 let currentEventType = 'Wedding';
@@ -63,6 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Run initial calculation on page load
   setEventType('Wedding');
   calculateCost();
+
+  // 6. Automatically replace any remaining old WhatsApp links with 918220462992
+  const cleanPhone = getCleanWhatsAppNumber();
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.href = `https://wa.me/${cleanPhone}?text=${encodeURIComponent('Vanakkam Nanban Catering! I would like to enquire about catering services.')}`;
+  });
 });
 
 /**
@@ -199,15 +227,15 @@ function enquireCurrentPackage() {
 
   const addonsText = activeAddons.length > 0 ? activeAddons.join(', ') : 'None';
 
-  const message = `Vanakkam Nanban Catering! I am looking for a catering quote in Rasipuram/Nearby:%0A%0A` +
+  const message = `Vanakkam Nanban Catering! I would like to enquire about your catering services:%0A%0A` +
                   `• *Occasion:* ${currentEventType}%0A` +
                   `• *Meal Plan:* ${selectedMeal}%0A` +
                   `• *Expected Guests:* ${guests} Pax%0A` +
                   `• *Add-ons:* ${addonsText}%0A` +
                   `• *Estimated Budget:* ${totalCost}%0A%0A` +
-                  `Please share the full menu items and date availability.`;
+                  `Please let me know your availability for our date and share the sample menu.`;
 
-  window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+  window.open(`https://wa.me/${getCleanWhatsAppNumber()}?text=${message}`, '_blank');
 }
 
 /**
@@ -256,8 +284,5 @@ function sendViaWhatsApp() {
                   (notes ? `📝 *Special Notes:* ${notes}%0A` : '') +
                   `%0APlease let me know your availability and sample menu.`;
 
-  window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+  window.open(`https://wa.me/${getCleanWhatsAppNumber()}?text=${message}`, '_blank');
 }
-
-
-
