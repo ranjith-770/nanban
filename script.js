@@ -258,3 +258,6 @@ function sendViaWhatsApp() {
 
   window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
 }
+
+
+
