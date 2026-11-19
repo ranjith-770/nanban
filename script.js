@@ -31,7 +31,7 @@ let currentEventType = 'Wedding';
 // Base Package Rates (in INR per plate)
 const basePrices = {
   tiffin: 110,
-  lunch: 130,
+  lunch: 150,
   dinner: 130,
   fullday: 360
 };
